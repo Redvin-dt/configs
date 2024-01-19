@@ -23,7 +23,15 @@ return require('packer').startup(function(use)
   use("theprimeagen/harpoon")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
+  use { "catppuccin/nvim", as = "catppuccin"}
   
+  require("catppuccin").setup({
+      integrations = {
+          cmp = true,
+          treesitter = true,
+      }
+  })
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
@@ -47,5 +55,6 @@ return require('packer').startup(function(use)
     "neovim/nvim-lspconfig",
   }
 
+  use { 'rush-rs/tree-sitter-asm' }
 end)
 
